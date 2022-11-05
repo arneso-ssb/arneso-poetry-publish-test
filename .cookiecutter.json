@@ -1,0 +1,14 @@
+{
+  "_output_dir": "C:\\Users\\aei\\tmp",
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Arne S\u00f8rli",
+  "copyright_year": "2022",
+  "development_status": "Development Status :: 3 - Alpha",
+  "email": "81353974+arneso-ssb@users.noreply.github.com",
+  "friendly_name": "Arneso Poetry Publish Test",
+  "github_user": "arneso-ssb",
+  "license": "MIT",
+  "package_name": "arneso_poetry_publish_test",
+  "project_name": "arneso-poetry-publish-test",
+  "version": "0.1.0"
+}
