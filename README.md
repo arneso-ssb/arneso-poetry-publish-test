@@ -56,6 +56,8 @@ _Arneso Poetry Publish Test_ is free and open source software.
 If you encounter any problems,
 please [file an issue] along with a detailed description.
 
+## Files used in SSB presentation 20.01.23
+
 ## Credits
 
 This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
