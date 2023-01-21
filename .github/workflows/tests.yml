@@ -22,8 +22,8 @@ jobs:
           - { python: "3.9", os: "ubuntu-latest", session: "tests" }
           - { python: "3.8", os: "ubuntu-latest", session: "tests" }
           - { python: "3.7", os: "ubuntu-latest", session: "tests" }
-          #          - { python: "3.10", os: "windows-latest", session: "tests" }
-          #          - { python: "3.10", os: "macos-latest", session: "tests" }
+          - { python: "3.10", os: "windows-latest", session: "tests" }
+          - { python: "3.10", os: "macos-latest", session: "tests" }
           - { python: "3.10", os: "ubuntu-latest", session: "typeguard" }
           - { python: "3.10", os: "ubuntu-latest", session: "xdoctest" }
           - { python: "3.10", os: "ubuntu-latest", session: "docs-build" }
@@ -55,6 +55,15 @@ jobs:
 
           with open(os.environ["GITHUB_ENV"], mode="a") as io:
               print(f"VIRTUALENV_PIP={pip.__version__}", file=io)
+
+      # This step is necessary because pipx on Windows with python 3.9 fails to
+      # install poetry >= 1.3.0. Using the installed python version (!=3.9) to
+      # install pipx fixes the problem.
+      # The "windows-latest" image uses Windows Server 2022 with python 3.9.
+      - name: Install Pipx on Windows
+        if: runner.os == 'Windows'
+        run: |
+          python -m pip install --user pipx
 
       - name: Install Poetry
         run: |
